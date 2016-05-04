@@ -1,0 +1,461 @@
+@import 'fonts.scss'
+$white: #fff
+$black: #000
+$grey: #b1b1b1
+$green: #22ab5e
+$fsz: 16px
+$ffa: 'ApercuPro', sans-serif
+$ffb: 'BloggerSansMedium', sans-serif
+$ffbi: 'BloggerSansMediumItalic', sans-serif
+$mobileS: 320px
+$mobileM: 375px
+$mobileL: 425px
+$tablet: 768px
+$laptop: 1024px
+$laptopL: 1440px
+
+
+@mixin clr
+  *zoom: 1
+  &:before, &:after 
+    content: " "
+    display: table
+  
+  &:after 
+    clear: both
+*
+	box-sizing: border-box
+body
+	margin: 0
+	padding: 0
+	font-family: $ffa
+	color: $black
+	line-height: 1
+	font-size: $fsz
+h1
+	font-size: 170%
+	@media only screen and (min-width: $laptop + 1)
+		font-size: 280%
+h2
+	font-style: 32px
+	margin: 24px
+h1, h2, h3
+	font-family: $ffb
+	font-weight: normal
+p
+	margin: 24px
+	line-height: 27px
+	font-size: $fsz + 2
+.js-rayban
+	background-image: url('/img/rayban.jpg')
+	background-repeat: no-repeat
+	background-position: center 70px
+	background-size: 120%
+	background-color: #c67f47
+.tabletMenu
+	&__line
+		width: 30px
+		height: 2px
+		background-color: #fff
+	&__line:not(:last-child)
+		margin-bottom: 7px
+.header
+	background-color: $black
+	margin: 0
+	padding-bottom: 20px
+	padding-top: 20px
+	+clr
+	&_center
+		text-align: center
+	&__tabletMenu
+		display: inline-block
+		margin-left: 24px
+		margin-top: 5px
+		float: left
+		@media only screen and (min-width: 861px)
+			display: none
+	&__logo
+		margin-left: 30px
+		float: left
+		@media only screen and (max-width: 861px)
+			margin: 0 auto
+			float: none
+			display: inline-block
+	&__weather
+		margin-left: 90px
+		margin-top: 5px
+		float: left
+		@media only screen and (max-width: 861px)
+			display: none
+	&__menu
+		float: right
+		margin: 4px 30px 0px 0px
+		font-size: $fsz + 5
+		@media only screen and (max-width: 861px)
+			display: none!important
+	&__login
+		width: 30px
+		height: 30px
+		display: inline-block
+		margin-right: 24px
+		float: right
+		@media only screen and (min-width: 862px)
+			display: none
+.logo
+	width: 160px
+.weather
+	color: $white
+	&__city, &__icon, &__temp
+		float: left
+		margin-right: 10px
+	&__city
+		font-size: $fsz + 2
+	&__icon
+		width: 25px
+		height: 25px
+	&__temp
+		margin-top: 3px
+.js-sunny
+	background-image: url('/img/sunny.svg')
+.menu
+	display: flex
+  justify-content: center
+  align-items: center
+	&__link
+		display: inline-block
+		color: $white
+		text-decoration: none
+		&_login, &_search
+			width: 25px
+			height: 25px
+		@media only screen and (max-width: $mobileL)
+			display: block
+			margin: 15px
+	&__link:not(:last-child)
+		margin-right: 18px
+.article
+	width: 70%
+	padding: 8px
+	background-color: $white
+	margin: 240px auto 0
+	@media only screen and (max-width: $laptop + 1)
+		width: 100%
+		margin: 0
+	@media only screen and (max-width: $mobileS)
+		padding: 0
+	&__banner
+		float: right
+		padding: 37px
+		width: 30%
+		border: 1px solid lighten($grey,20%)
+		@media only screen and (max-width: $laptop)
+			display: none
+	&__info
+		width: 100%
+		color: $white
+		@media only screen and (min-width: $laptop + 1)
+			width: 69%
+			margin-right: 8px
+	&__social
+		background-color: #f0f0f0
+		border: 1px solid $grey
+		padding: 24px
+	&__tags
+		margin-left: 24px
+	&__more
+		margin-bottom: 8px
+	&__greyblock
+		background-color: #f0f0f0
+		+clr
+.banner
+	width: 100%
+.info
+	position: relative
+	&__badge
+		position: absolute
+		bottom: 0
+		left: 0
+		margin: 0 25px 25px 25px
+.statistics
+	font-size: $fsz - 2
+	&__comment,&__views
+		display: inline-block
+		background-position: 0 center
+		background-repeat: no-repeat
+		padding-left: 23px
+		background-size: 20px
+	&__views
+		background-image: url("/img/view.svg")
+		margin-right: 10px
+		&_grey
+			background-image: url("/img/view_grey.svg")
+	&__comment
+		background-image: url("/img/comment.svg")
+		background-position-y: 2px
+		background-size: 15px
+		padding-left: 20px
+		padding-bottom: 3px
+		&_grey
+			background-image: url("/img/comment_grey.svg")
+.text
+	margin-bottom: 24px
+	border-bottom: 1px solid #e4e4e4
+	&__meta
+		float: right
+		width: 30%
+		min-height: 100px
+		padding: 10px 20px
+		+clr
+		@media only screen and (max-width: $mobileL)
+			width: 100%
+			padding: 24px 24px 0
+			float: none
+			min-height: 50px
+	&__grayblock
+		float: right
+		width: 30%
+		margin-left: 20px
+		@media only screen and (max-width: $tablet)
+			width: 43%
+		@media only screen and (max-width: $mobileL)
+			width: 100%
+			margin-bottom: 24px
+.meta
+	color: #808080
+	&__date
+		margin-bottom: 20px
+	&__author
+		font-family: $ffbi
+		font-style: italic
+.grayblock
+	display: block
+	padding: 20px
+	background-color: #f0f0f0
+	border: 1px solid $grey
+	line-height: 24px
+.carousel
+	&__img
+		width: 100%
+.tags
+	padding-bottom: 24px
+	&__title
+		font-family: $ffb
+		font-size: $fsz * 2
+		margin-bottom: 24px
+	&__collection
+.collection
+	margin-bottom: 10px
+	&__name
+		font-family: $ffb
+		font-size: $fsz + 8
+		margin-right: 10px
+	&__tag:not(:last-child)
+		margin-right: 15px
+	&__tag
+		display: inline-block
+		border: 1px solid $grey
+		padding: 7px
+		color: $black
+		text-decoration: none
+		@media only screen and (max-width: $mobileL)
+			margin-bottom: 8px			
+.more
+	&__item
+		float: left
+	+clr
+	&__item:not(:last-child)
+		margin-right: 3px
+	&__title
+		font-size: $fsz * 2
+		font-family: $ffb
+		margin: 24px
+.item
+	border: 1px solid $grey
+	width: 33%
+	+clr
+	@media only screen and (max-width: $mobileL)
+		width: 100%
+	&__img
+		width: 100%
+	&__text
+		margin: 20px
+		line-height: 24px
+	&__place
+		float: left
+		margin: 0 20px 20px 20px
+	&__statistics
+		float: right
+		margin-right: 20px
+	&__place, &__statistics
+		color: #808080
+.greyblock
+	&__reviews
+		width: 70%
+		float: left
+		@media only screen and (max-width: $mobileL)
+			width: 100%
+			float: none
+.reviews
+	position: relative
+	border: 1px solid $grey
+	background-color: $white
+	&__title
+		font-family: $ffb
+		font-size: $fsz * 2
+		padding: 24px
+		border-bottom: 1px solid $grey
+	&__add
+		position: absolute
+		top: 39px
+		right: 25px
+		color: $green
+		text-decoration: none
+	&__button
+		margin: 14px 24px
+	&__review
+		padding: 24px
+.review
+	position: relative
+	border-bottom: 1px solid $grey
+	&__img
+		float: left
+		border-radius: 50%
+		margin-right: 24px
+		min-height: 120px
+	&__name
+		font-weight: bold
+	&__rating
+		position: absolute
+		top: 21px
+		right: 24px
+	&__date
+		font-size: $fsz - 2
+		color: #808080
+	&__text
+		line-height: 24px
+		font-size: $fsz
+		margin: 20px 0
+.rating
+	unicode-bidi: bidi-override
+	direction: rtl
+	&__star
+		display: inline-block
+		position: relative
+		width: 1em
+		color: #808080
+		font-size: $fsz + 2
+	&__star:hover:before, &__star:hover ~ &__star:before
+		content: "\2605"
+		position: absolute
+		color: $green
+.button
+	color: $green
+	border: 1px solid $green
+	padding: 14px
+	text-decoration: none
+	display: block
+	text-align: center
+.group
+	width: 28%
+	margin: 1%
+	padding: 24px
+	float: right
+	border: 1px solid $grey
+	background-color: $white
+	@media only screen and (max-width: $mobileL)
+		display: none
+.footer
+	background-color: $black
+	padding-bottom: 20px
+	&__social
+		background-color: $green
+		display: flex
+		justify-content: center
+	&__delivery
+		text-align: center
+	&__menu
+		display: flex
+		justify-content: center
+		margin-bottom: 25px
+		margin-top: 15px
+		@media only screen and (max-width: $mobileL)
+			display: block
+			text-align: center
+	&__copy
+		font-size: $fsz - 2
+		color: $grey
+		text-align: center
+.social
+	&__icon
+		display: block
+		width: 33px
+		height: 33px
+		margin-top: 5px
+		margin-bottom: 5px
+		background-repeat: no-repeat
+		background-position: center
+		background-size: 100%
+		&_fb
+			background-image: url("/img/fb.svg")
+		&_vk
+			background-image: url("/img/vk.svg")
+		&_inst
+			background-image: url("/img/inst.svg")
+	&__icon:not(:last-child)
+		margin-right: 60px
+	&__button
+		background-position: 0 0
+		background-repeat: no-repeat
+		display: inline-block
+		cursor: pointer
+		padding: 2px
+		margin: 0 20px 0 0
+		height: 21px
+		@media only screen and (max-width: $mobileL)
+			display: block
+			margin: 14px auto
+		&_fb
+			background-image: url("/img/button_fb.jpg")
+			width: 220px
+		&_vk
+			background-image: url("/img/button_vk.jpg")
+			width: 160px
+		&_ok
+			background-image: url("/img/button_ok.jpg")
+			width: 123px
+		&_tw
+			background-image: url("/img/button_tw.jpg")
+			width: 80px
+.delivery
+	&__text
+		color: $grey
+		margin-top: 20px
+		@media only screen and (max-width: $mobileL)
+			margin: 20px
+	&__form
+		margin-top: 15px
+		padding-bottom: 25px
+		border-bottom: 1px solid #1a1a1a
+		width: 98%
+		margin: 15px auto 0
+.form
+	&__input
+		background-color: #262626
+		border: 1px solid $green
+		color: $grey
+		padding: 12px
+		font-size: $fsz
+	&__submit
+		background-image: url("/img/arrow-rigth.svg")
+		background-position: center
+		background-repeat: no-repeat
+		background-size: 40%
+		background-color: $green
+		border: 1px solid $green
+		cursor: pointer
+		padding: 13px 13px 14px
+		width: 39px
+		position: relative
+		top: -1px
+		left: -5px
+
